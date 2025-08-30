@@ -1,0 +1,29 @@
+The question is essentially:
+
+👉 Two strings are not distinct if one is a permutation (anagram) of the other.
+👉 We need to count how many distinct groups exist.
+
+
+import java.util.*;
+
+public class FindUnique {
+    public static void main(String[]args){
+        Scanner in = new Scanner(System.in);
+        String[] s ={ "abcd","bacd","dref"};
+
+        System.out.println(findUnique(s));
+
+    }
+    public static int findUnique(String []s){
+
+        Set<String>set = new HashSet<>();
+
+        for(String str:s){
+            char[]arr = str.toCharArray();
+            Arrays.sort(arr);
+            set.add(new String(arr));
+        }
+        return set.size();
+    }
+
+}
